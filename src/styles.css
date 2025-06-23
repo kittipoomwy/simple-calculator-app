@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles for the Modern Calculator App */
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(135deg, #FEEBF6 0%, #EBD6FB 50%, #E6F3FF 100%);
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #687FE5;
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: rgba(104, 127, 229, 0.2);
+  color: #2D3748;
+}
+
+::-moz-selection {
+  background: rgba(104, 127, 229, 0.2);
+  color: #2D3748;
+}

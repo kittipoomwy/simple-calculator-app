@@ -1,0 +1,51 @@
+<div class="calculator-container">
+    <div class="calculator-header">
+        <h1>Simple Calculator</h1>
+    </div>
+
+    <form [formGroup]="calculatorForm" class="calculator-form">
+        <div class="calculator-wrapper">
+            <div class="display-section">
+                <div class="display-row">
+                    <div class="display-label">Current:</div>
+                    <div class="display-value">{{ number }}</div>
+                </div>
+                <div class="display-row formula-row" *ngIf="formula && formula.trim()">
+                    <div class="display-label">Formula:</div>
+                    <div class="display-value formula-text">{{ formula }}</div>
+                </div>
+            </div>
+            
+            <div class="button-grid">
+                <div class="button-row">
+                    <button type="button" class="calc-btn function-btn" (click)="clearCalculator()">AC</button>   
+                    <button type="button" class="calc-btn function-btn" (click)="removeDigit()">C</button>      
+                    <button type="button" class="calc-btn function-btn" (click)="squareRoot()">√</button> 
+                    <button type="button" class="calc-btn operator-btn" (click)="percentage()">%</button>          
+                </div>
+                <div class="button-row">
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('7')">7</button>   
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('8')">8</button>      
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('9')">9</button> 
+                    <button type="button" class="calc-btn operator-btn" (click)="setOperator('÷')">÷</button>          
+                </div>                <div class="button-row">
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('4')" [attr.data-value]="'4'">4</button>   
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('5')" [attr.data-value]="'5'">5</button>      
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('6')" [attr.data-value]="'6'">6</button> 
+                    <button type="button" class="calc-btn operator-btn" (click)="setOperator('×')">×</button>          
+                </div>
+                <div class="button-row">
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('1')">1</button>   
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('2')">2</button>      
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('3')">3</button> 
+                    <button type="button" class="calc-btn operator-btn" (click)="setOperator('-')">−</button>          
+                </div>
+                <div class="button-row">
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('.')">.</button>   
+                    <button type="button" class="calc-btn number-btn" (click)="clickDigit('0')">0</button>      
+                    <button type="button" class="calc-btn equals-btn" (click)="performEquals()">=</button> 
+                    <button type="button" class="calc-btn operator-btn" (click)="setOperator('+')">+</button>          
+                </div>            </div>
+        </div>
+    </form>
+</div>
